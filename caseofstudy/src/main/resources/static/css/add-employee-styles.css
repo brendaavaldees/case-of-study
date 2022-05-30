@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: url("../images/login-bg.jpg") no-repeat fixed center;
+}
+
+.main-title{
+    position: relative;
+    left: 90px;
+    top: 50px;
+}
+
+#form-add-employee{
+    background: rgba(255, 255, 255, 0.4);
+    margin: 80px;
+    padding: 30px;
+    border: solid 3px black;
+    border-radius: 5px;
+    font-weight: 700;
+}
+
+#btn-add-employee{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    
+}

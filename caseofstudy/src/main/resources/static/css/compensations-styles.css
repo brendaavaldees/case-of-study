@@ -1,0 +1,84 @@
+*{
+    margin: 0;
+    padding: 0;
+    
+}
+
+body{
+   background: url("../images/login-bg.jpg") no-repeat fixed center;
+}
+
+ul{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+#app-title{
+    font-size: 25px;
+    margin: 10px 0 10px 0px;
+}
+
+.nav-item, .nav-item a{
+    font-size: 16px;
+    color: white;
+    text-decoration: none;
+    list-style: none;
+}
+
+#lbl-name, #btn-logout{
+    position: relative;
+}
+
+#lbl-name{
+    top: 14px;
+    left: 300px;
+}
+
+#btn-logout{
+    top: 10px;
+    right: 15px;
+    font-size: 13px;
+}
+
+.nav-item :hover{
+    color: gray;
+}
+
+#box-search, #filters{
+    width: fit-content;
+    margin: 0 auto;
+    
+}
+
+#filters{
+    margin-top: 15px;
+}
+
+#employee-name{
+    float: left;
+    margin: 15px 0 15px 15px;
+}
+
+#btn-link-add-compensation{
+    
+    float: right;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 15px 15px 15px 0;
+}
+
+#btn-link-add-compensation a{
+    text-decoration: none;
+    color: black;
+}
+
+#table-compensations{
+    background: rgba(255, 255, 255, 0.4);
+    margin: 0 auto;
+    border: 1px solid black; 
+}
+

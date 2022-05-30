@@ -1,0 +1,44 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background: url("../images/login-bg.jpg") no-repeat fixed center;
+
+}
+
+#main-title{
+    text-align: center;
+    color: black;
+    margin: 20px 0 20px 0 ;
+    letter-spacing: 8px;
+}
+
+#main-box{
+    position: relative;
+    top: 30px;
+    background: rgba(255, 255, 255, 0.4);
+    border: solid 3px black;
+    width: 450px;
+    margin: 0 auto;
+    border-radius: 1em;
+    padding: 20px 70px;
+    
+}
+
+#main-icon{
+    display: block;
+    margin: 20px auto;
+    
+}
+
+.input-group{
+    margin: 20px 0;
+}
+
+#btn-login{
+    display: block;
+    margin: 30px auto 10px;
+}
+
