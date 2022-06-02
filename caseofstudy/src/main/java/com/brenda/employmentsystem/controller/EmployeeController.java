@@ -20,8 +20,7 @@ public class EmployeeController {
 
     @GetMapping("/home")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
-        model.addAttribute("employeesList", employeeService.getAllEmployees(keyword));
-        model.addAttribute("keyword", keyword);
+        model.addAttribute("employeesList", employeeService.getEmployeesByKeyword(keyword));
         return "home-page";
     }
     

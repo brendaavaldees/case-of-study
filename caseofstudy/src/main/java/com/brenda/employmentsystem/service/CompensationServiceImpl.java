@@ -2,6 +2,7 @@ package com.brenda.employmentsystem.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,9 +16,22 @@ public class CompensationServiceImpl implements CompensationService{
 	
 	@Autowired
 	private CompensationRepository compensationRepository;
+	
 
 	@Override
-	public List<Compensation> getAllCompensations(Employee employee) {
+	public List<Compensation> getCompensationsByEmployeeAndKeyword(Employee employee, String keyword) {
+		if(employee != null && keyword != null) {
+			return compensationRepository.findByEmployee(employee).stream()
+	    			.filter(compensation -> keyword.contains(Float.toString(compensation.getAmount()))
+	    							|| keyword.contains(compensation.getDate())
+	    							|| keyword.contains(compensation.getDescription())
+	    							|| keyword.contains(compensation.getType().toString()))
+	    							
+	    			.collect(Collectors.toList());
+			
+		}else if(keyword == null) {
+			return compensationRepository.findByEmployee(employee);
+		}
 		return compensationRepository.findAll();
 	}
 

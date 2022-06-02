@@ -12,23 +12,32 @@ ul{
     background-color: black;
     display: flex;
     justify-content: space-between;
-
 }
 
 #app-title{
-    font-size: 25px;
-    margin: 10px 0 10px 0px;
+    margin: 10px 0;
+    
 }
 
-.nav-item, .nav-item a{
+#link-home{
+	text-decoration: none;
+	font-size: 25px;
+}
+
+.nav-item, .nav-item a, a{
     font-size: 16px;
     color: white;
-    text-decoration: none;
     list-style: none;
+    
 }
 
+.nav-item :hover{
+    color: gray;
+}
+
+
 #lbl-name, #btn-logout{
-    position: relative;
+	position: relative;
 }
 
 #lbl-name{
@@ -42,10 +51,6 @@ ul{
     font-size: 13px;
 }
 
-.nav-item :hover{
-    color: gray;
-}
-
 #box-search, #filters{
     width: fit-content;
     margin: 0 auto;
@@ -57,8 +62,8 @@ ul{
 }
 
 #employee-name{
+    margin: 15px 0 0 15px;
     float: left;
-    margin: 15px 0 15px 15px;
 }
 
 #btn-link-add-compensation{

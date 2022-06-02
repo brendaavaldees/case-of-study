@@ -16,8 +16,12 @@ ul{
 }
 
 #app-title{
-    font-size: 25px;
     margin: 10px 0 10px 0px;
+}
+
+#link-home{
+	text-decoration: none;
+	font-size: 25px;
 }
 
 .nav-item, .nav-item a, a{

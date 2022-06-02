@@ -6,7 +6,7 @@ import com.brenda.employmentsystem.model.Employee;
 
 public interface EmployeeService {
 	
-    List <Employee> getAllEmployees(String keyword);
+    List <Employee> getEmployeesByKeyword(String keyword);
     
     void saveEmployee(Employee employee);
     

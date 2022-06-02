@@ -18,7 +18,11 @@
     <header>
       <nav>
         <ul>
-          <li class="nav-item" id="app-title">Employment System</li>
+          <li class="nav-item" id="app-title">
+          	<a th:href="@{/home}" id="link-home">
+    		 Employment System
+    		</a>	
+          </li>
           <li class="nav-item" id="lbl-name">Hello, Brenda!</li>
           <li class="nav-item">
             <button type="button" class="btn btn-light" id="btn-logout">
@@ -30,15 +34,14 @@
     </header>
 
     <div id="box-search">
-      <form class="d-flex" th:action=@{/}>
+      <form class="d-flex" th:action=@{/home}>
         <input
           class="form-control me-2"
           type="search"
           placeholder="Search Employee"
           aria-label="Search"
           name="keyword"
-          id="keyword"
-          th:value="${keyword}"
+          requiered
         />
         <button class="btn btn-outline-dark" type="submit">
           <svg

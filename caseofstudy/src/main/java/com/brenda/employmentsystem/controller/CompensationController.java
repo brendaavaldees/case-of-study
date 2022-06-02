@@ -8,7 +8,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.brenda.employmentsystem.model.Compensation;
@@ -31,10 +33,10 @@ public class CompensationController {
 	private CompensationTypeService compensationTypeService;
 	
 	@GetMapping("/compensations/{employee_id}")
-	public String viewCompensationsFromEmployee(@PathVariable (value = "employee_id") long employee_id, Model model) {
+	public String viewCompensationsFromEmployee(@PathVariable (value = "employee_id") long employee_id, @Param("keyword") String keyword, Model model) {
 		Employee employee = employeeService.getEmployeeById(employee_id);
 		model.addAttribute("employee", employee);
-		model.addAttribute("compensationList", compensationService.getAllCompensations(employee));
+		model.addAttribute("compensationList", compensationService.getCompensationsByEmployeeAndKeyword(employee, keyword));
 		return "compensations.html";
 	}
 	
@@ -64,6 +66,7 @@ public class CompensationController {
     	Employee employee = employeeService.getEmployeeById(employee_id);
     	model.addAttribute("employee", employee);
     	model.addAttribute("compensation", compensation);
+    	model.addAttribute("typesList", compensationTypeService.getAllCompensationTypes());
     	return "edit-compensation.html";
     }
 

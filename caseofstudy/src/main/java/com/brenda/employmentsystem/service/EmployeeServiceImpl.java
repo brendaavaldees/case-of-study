@@ -2,6 +2,7 @@ package com.brenda.employmentsystem.service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import com.brenda.employmentsystem.model.Employee;
 import com.brenda.employmentsystem.repository.EmployeeRepository;
@@ -16,7 +17,19 @@ public class EmployeeServiceImpl implements EmployeeService{
     private EmployeeRepository employeeRepository;
 
     @Override
-    public List<Employee> getAllEmployees(String keyword) {
+    public List<Employee> getEmployeesByKeyword(String keyword) {
+    	if(keyword != null) {
+    		return employeeRepository.findAll().stream()
+    			.filter(employee -> keyword.contains(employee.getFirstName())
+    							|| keyword.contains(employee.getMiddleName())
+    							|| keyword.contains(employee.getLastName())
+    							|| keyword.contains(employee.getPosition())
+    							|| keyword.contains(employee.getBirthday()))
+    			.collect(Collectors.toList());
+    		
+
+    		
+    	}
         return employeeRepository.findAll();
     }
 

@@ -22,13 +22,18 @@
     <header>
       <nav>
         <ul>
-          <li class="nav-item" id="app-title">Employment System</li>
+          <li class="nav-item" id="app-title">
+          	<a th:href="@{/home}" id="link-home">
+    		 Employment System
+    		</a>	
+          </li>
           <li class="nav-item" id="lbl-name">Hello, Brenda!</li>
           <li class="nav-item">
             <button type="button" class="btn btn-light" id="btn-logout">
               Log Out
             </button>
           </li>
+          
         </ul>
       </nav>
     </header>
@@ -40,6 +45,8 @@
           type="search"
           placeholder="Search Compensation"
           aria-label="Search"
+          name="keyword"
+          requiered
         />
         <button class="btn btn-outline-dark" type="submit">
           <svg
@@ -77,7 +84,6 @@
             </ul>
           </div>
     </div>
-    
 
     <h4 id="employee-name" th:object="${employee}" th:text="*{firstName} + ' ' + *{middleName} + ' ' + *{lastName}"></h4>
 
@@ -124,7 +130,7 @@
             <td th:text = "${compensation.date}"></td>
             <td>
               <button type="button" class="btn btn-dark">
-              <a th:href="@{/editCompensation/{compensation_id}(compensation_id=${compensation.id})}"/>
+              <a th:href="@{/editCompensation/{compensation_id}(compensation_id=${compensation.id},employee_id=${employee.id})}"/>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
