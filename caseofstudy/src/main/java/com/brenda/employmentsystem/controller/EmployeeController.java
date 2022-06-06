@@ -18,7 +18,7 @@ public class EmployeeController {
     @Autowired
     private EmployeeService employeeService;
 
-    @GetMapping("/home")
+    @GetMapping("/")
     public String viewHomePage(Model model, @Param("keyword") String keyword) {
         model.addAttribute("employeesList", employeeService.getEmployeesByKeyword(keyword));
         return "home-page";

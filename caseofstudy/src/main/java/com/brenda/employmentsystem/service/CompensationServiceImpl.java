@@ -21,9 +21,9 @@ public class CompensationServiceImpl implements CompensationService{
 	@Override
 	public List<Compensation> getCompensationsByEmployeeAndKeyword(Employee employee, String keyword) {
 		if(employee != null && keyword != null) {
+			
 			return compensationRepository.findByEmployee(employee).stream()
 	    			.filter(compensation -> keyword.contains(Float.toString(compensation.getAmount()))
-	    							|| keyword.contains(compensation.getDate())
 	    							|| keyword.contains(compensation.getDescription())
 	    							|| keyword.contains(compensation.getType().toString()))
 	    							

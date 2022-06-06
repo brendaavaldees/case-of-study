@@ -16,6 +16,8 @@ public interface CompensationRepository extends JpaRepository<Compensation, Long
 	@Query("SELECT c FROM COMPENSATIONS c WHERE c.employee_id LIKE %?1%")
 	public List<Compensation> findByEmployee(Employee employee);
 	
+	@Query("SELECT c FROM COMPENSATIONS c WHERE (SELECT DATE_FORMAT(c.compensation_date, '%M')) LIKE %?1%")
+	public List<Compensation> findByDate(String Date);
 	
 	
 }

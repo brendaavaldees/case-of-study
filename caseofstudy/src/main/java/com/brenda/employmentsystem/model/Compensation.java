@@ -1,6 +1,7 @@
 package com.brenda.employmentsystem.model;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -74,6 +75,9 @@ public class Compensation{
 	}
 
 	public String getDate() {
+		/*String pattern = "MMMMM-yyyy";
+		SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);
+		String dateFormated = simpleDateFormat.format(date);*/
 		return date;
 	}
 

@@ -19,13 +19,14 @@
       <nav>
         <ul>
           <li class="nav-item" id="app-title">
-          	<a th:href="@{/home}" id="link-home">
+          	<a th:href="@{/}" id="link-home">
     		 Employment System
     		</a>	
           </li>
-          <li class="nav-item" id="lbl-name">Hello, Brenda!</li>
+          <li class="nav-item" id="lbl-name" th:inline="text">Hello, [[${#httpServletRequest.remoteUser}]]!</li>
           <li class="nav-item">
-            <button type="button" class="btn btn-light" id="btn-logout">
+          
+            <button th:action="@{/logout}" method="post" type="submit" class="btn btn-light" id="btn-logout">
               Log Out
             </button>
           </li>
@@ -34,7 +35,7 @@
     </header>
 
     <div id="box-search">
-      <form class="d-flex" th:action=@{/home}>
+      <form class="d-flex" th:action=@{/}>
         <input
           class="form-control me-2"
           type="search"

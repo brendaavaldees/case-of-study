@@ -35,6 +35,7 @@ public class CompensationController {
 	@GetMapping("/compensations/{employee_id}")
 	public String viewCompensationsFromEmployee(@PathVariable (value = "employee_id") long employee_id, @Param("keyword") String keyword, Model model) {
 		Employee employee = employeeService.getEmployeeById(employee_id);
+		
 		model.addAttribute("employee", employee);
 		model.addAttribute("compensationList", compensationService.getCompensationsByEmployeeAndKeyword(employee, keyword));
 		return "compensations.html";
